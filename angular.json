@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "a0aba131-8f9a-42f3-9c5b-83a76c439cbf"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "northwind": {
+    "recar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/northwind",
+            "outputPath": "dist/recar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,13 +31,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "northwind:build"
+            "browserTarget": "recar:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "northwind:build:production"
+              "browserTarget": "recar:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "northwind:build"
+            "browserTarget": "recar:build"
           }
         },
         "test": {
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "northwind:serve"
+            "devServerTarget": "recar:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "northwind:serve:production"
+              "devServerTarget": "recar:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "northwind"
+  "defaultProject": "recar"
 }
